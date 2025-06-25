@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejal Talekar - AI/ML Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .hero {
+            background-color: #fff;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin: 20px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 15px auto 0;
+        }
+
+        .experience-item {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .experience-item .company {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .certifications, .languages {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .certifications h3, .languages h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .certifications p, .languages p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Sejal Talekar</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Sejal Talekar</h1>
+            <p class="subtitle">AI/ML Developer</p>
+            <p class="description">Experienced software developer specializing in artificial intelligence and machine learning solutions. I focus on creating practical AI applications across healthcare, security, entertainment, and agriculture domains, with expertise in transformer models, computer vision, and IoT integration.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>Software Developer</h3>
+                <div class="company">Abhyudyaya Techno Solutions Pvt Ltd</div>
+                <div class="date">November 2024 – Present | Hubbali, Karnataka</div>
+                <p>Leading AI/ML projects across healthcare, security, entertainment, and agriculture domains. Architected and deployed 50+ AI-powered solutions, implementing transformer models including GPT-2, LLaMA, Mistral, and BERT. Developed custom chatbots using LangChain and Hugging Face Transformers, and enhanced AI scalability using AWS Lambda, SageMaker, and EC2.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Developer</h3>
+                <div class="company">MSK Solutions</div>
+                <div class="date">November 2023 – November 2024 | Hubbali, Karnataka</div>
+                <p>Developed AI/ML solutions focusing on real-time predictive analytics, NLP, and IoT automation. Optimized AI models for edge computing and deployed them on NVIDIA Jetson Nano and Orin Nano. Integrated various language models into chatbot applications for healthcare and customer support systems.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Key Projects</h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Personal AI Voice Assistant</h3>
+                    <p>Fine-tuned Lamini (T5-738M) model with PyTorch and transformers, integrating OpenAI API for natural interactions. Implemented motor control for automated systems, home automation features, and real-time object detection using OpenCV.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Smart Farming Solutions</h3>
+                    <p>Developed AI/ML models for crop and yield prediction, with CNN-based leaf disease detection. Integrated IoT monitoring using LoRa, MQTT, and Things Network for soil and climate data collection, with optimized deployment on low-power devices.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Smart Door Security System</h3>
+                    <p>Implemented OpenCV-based face recognition system for personalized access control and security alerts. Features real-time processing with instant recognition and SMTP notifications for unrecognized visitors.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Custom LLM Models</h3>
+                    <p>Developed custom LLM models , using fine-tuned Lamini-T5,mistral model for natural conversations.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Enterprise AI Solutions</h3>
+                    <p>Architected and deployed over 50 AI solutions across healthcare, entertainment, security, and agriculture sectors. Each solution designed with scalable architecture and production-ready implementation for real-world deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <p>Python, Flask, JavaScript, SQL</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <p>PyTorch, TensorFlow, Keras, Hugging Face Transformers, LangChain, NLP, Computer Vision, Fine-Tuning, Model Quantization</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>AI Models & Frameworks</h3>
+                    <p>GPT-2, LLaMA, T5, BERT, Gemma, Mistral, OpenCV, Image Processing, Face Recognition, Object Detection</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>IoT & Embedded Systems</h3>
+                    <p>LoRa, MQTT, Raspberry Pi, Arduino, ESP32, NVIDIA Jetson Nano, Orin Nano, Edge Computing</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & Deployment</h3>
+                    <p>AWS (Lambda, SageMaker, EC2), OpenAI API, SQLite, Model Compression, Production Deployment</p>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Specialized Areas</h3>
+                    <p>RAG-based QA Systems, Multimodal AI, Chatbot Development, Real-time Analytics, IoT Integration</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Information</h2>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:talekar9353@gmail.com">talekar9353@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+919353266593">+91 9353266593</a>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>Hubbali, Karnataka, India</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="#">View Profile</a>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3>Professional Certifications</h3>
+                <p>Full Stack Web Development – TechSaksham (Edunet Foundation)<br>
+                Artificial Intelligence – TechSaksham (Edunet Foundation, CSR by Microsoft & SAP)<br>
+                Java and Python Full Stack Development – KODNEST</p>
+            </div>
+
+            <div class="languages">
+                <h3>Languages</h3>
+                <p>English, Kannada, Hindi, Konkani, Marathi</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sejal Talekar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
